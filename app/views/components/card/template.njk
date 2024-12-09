@@ -12,20 +12,20 @@
         {% if params.status == "Approved" %}
             {{ govukTag({
                 text: "Lover",
-                classes: "govuk-tag--green"
+                classes: "govuk-tag--green govuk-!-margin-bottom-3"
             }) }}
         {% elseif params.status == "Rejected" %}
 
                 {{ govukTag({
                 text: "Bad blood",
-                classes: "govuk-tag--red"
+                classes: "govuk-tag--red govuk-!-margin-bottom-3"
             }) }}
 
         {% elseif params.status == "Undecided" %}
 
                 {{ govukTag({
                 text: "Speak now",
-                classes: "govuk-tag--purple"
+                classes: "govuk-tag--purple govuk-!-margin-bottom-3"
             }) }}
 
         {% endif %}
