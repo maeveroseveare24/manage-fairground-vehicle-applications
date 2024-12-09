@@ -8,8 +8,32 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 router.get('/', (req, res) => {
 
-    const applications = req.session.data.applications
+    let applications = req.session.data.applications
 
+    const filterStatus =req.query.filterStatus
+
+    if (filterStatus && filterStatus !== "_unchecked") {
+
+        applications = applications.filter((application) =>
+        
+            filterStatus.includes(application.status)
+
+        )
+
+    }
+    applications.sort((a, b) => {
+        const submittedAtA = a.submittedAt; // ignore upper and lowercase
+        const submittedAtB = b.submittedAt; // ignore upper and lowercase
+        if (submittedAtA < submittedAtB) {
+          return -1;
+        }
+        if (submittedAtA > submittedAtB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      });
     res.render('index.html', {
         applications
     })

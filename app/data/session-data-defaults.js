@@ -4,6 +4,7 @@ module.exports = {
 
     { 
       "id": "189813",
+      "submittedAt": "2024-11-05",
       "fullName": "Taylor Swift",
       "address": {
           "line1": "13 Cornelia Street",
@@ -14,8 +15,8 @@ module.exports = {
       "yearVehicleBuilt": 1989,
       "registrationNumber": 13,
       "vehicleDescription": "Pink glittery car",
-      "isVehicleLengthExtended": true,
-      "totalVehicleLengthMetres": 22,
+      "hasFavouriteTaylorSwiftSong": true,
+      "favouriteTaylorSong": "You're on your own kid",
       "hasLivingAccommodation": true,
       "hasTransportAnimals": true,
       "hasPetrolDieselGenerator": true,
@@ -30,6 +31,7 @@ module.exports = {
 
     { 
       "id": "189812",
+      "submittedAt": "2023-11-25",
       "fullName": "Chappell Roan",
       "address": {
           "line1": "Pink Pony Club",
@@ -40,8 +42,8 @@ module.exports = {
       "yearVehicleBuilt": 1998,
       "registrationNumber": 22,
       "vehicleDescription": "A casual convertible",
-      "isVehicleLengthExtended": false,
-      "totalVehicleLengthMetres": null,
+      "hasFavouriteTaylorSwiftSong": false,
+      "favouriteTaylorSong": null,
       "hasLivingAccommodation": false,
       "hasTransportAnimals": false,
       "hasPetrolDieselGenerator": false,
@@ -56,6 +58,7 @@ module.exports = {
 
     { 
       "id": "189815",
+      "submittedAt": "2024-12-05",
       "fullName": "Sabrina Carpenter",
       "address": {
           "line1": "Espresso Avenue",
@@ -66,8 +69,62 @@ module.exports = {
       "yearVehicleBuilt": 1998,
       "registrationNumber": 22,
       "vehicleDescription": "A casual convertible",
-      "isVehicleLengthExtended": false,
-      "totalVehicleLengthMetres": null,
+      "hasFavouriteTaylorSwiftSong": true,
+      "favouriteTaylorSong": "White horse",
+      "hasLivingAccommodation": false,
+      "hasTransportAnimals": false,
+      "hasPetrolDieselGenerator": false,
+      "hasFairgroundRide": false,
+      "totalWeightTonnes": 25,
+      "isVehicleMaxSpeed": false,
+      "isTravelConvoy": false,
+      "vehicleModified": false,
+      "status": "Undecided",
+
+    },
+
+    { 
+      "id": "12342",
+      "submittedAt": "2024-12-09",
+      "fullName": "Maeve Roseveare",
+      "address": {
+          "line1": "Birmingham",
+          "town": "Somewhere",
+          "postcode": "CV31"
+      },
+
+      "yearVehicleBuilt": 1998,
+      "registrationNumber": 22,
+      "vehicleDescription": "A casual convertible",
+      "hasFavouriteTaylorSwiftSong": true,
+      "favouriteTaylorSong": "Is it over now?",
+      "hasLivingAccommodation": false,
+      "hasTransportAnimals": false,
+      "hasPetrolDieselGenerator": false,
+      "hasFairgroundRide": false,
+      "totalWeightTonnes": 25,
+      "isVehicleMaxSpeed": false,
+      "isTravelConvoy": false,
+      "vehicleModified": false,
+      "status": "Undecided",
+
+    },
+
+    { 
+      "id": "234324",
+      "submittedAt": "2024-12-01",
+      "fullName": "Claire Hughes",
+      "address": {
+          "line1": "Somewhere",
+          "town": "London",
+          "postcode": "SC23"
+      },
+
+      "yearVehicleBuilt": 1998,
+      "registrationNumber": 22,
+      "vehicleDescription": "A casual convertible",
+      "hasFavouriteTaylorSwiftSong": true,
+      "favouriteTaylorSong": "Would've, could've, should've",
       "hasLivingAccommodation": false,
       "hasTransportAnimals": false,
       "hasPetrolDieselGenerator": false,

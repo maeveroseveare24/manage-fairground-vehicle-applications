@@ -60,11 +60,11 @@
     {{application.address.postcode}}
   {% endset %}
 
-    {% set vehicleLengthHtml %}
-      {% if application.isVehicleLengthExtended %}
-        {{application.totalVehicleLengthMetres}} metres
+    {% set TaylorSwiftHtml %}
+      {% if application.hasFavouriteTaylorSwiftSong %}
+        {{application.favouriteTaylorSong}} 
       {% else %}
-        Less than 18.65 m
+        No favourite song
       {% endif %}
   {% endset %}
 
@@ -106,10 +106,10 @@
     },
     {
       key: {
-        text: "Vehicle length, including trailers"
+        text: "Favourite Taylor Swift song"
       },
       value: {
-        html: vehicleLengthHtml
+        html: TaylorSwiftHtml
       },
       actions: {
         items: [
