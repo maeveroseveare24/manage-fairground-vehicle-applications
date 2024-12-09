@@ -7,11 +7,28 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {{ govukBackLink({
+      text: "Back",
+      href: "/"
+    }) }}
+
     <h1 class="govuk-heading-xl">
-     Application for {{application.fullName}}
+      Application for {{application.fullName}}
     </h1>
-   
-   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+  {% set addressHtml %}
+    {{application.address.line1}} <br>
+    {{application.address.town}} <br>
+    {{application.address.postcode}}
+  {% endset %}
+
+    {% set vehicleLengthHtml %}
+      {% if application.isVehicleLengthExtended %}
+        {{application.totalVehicleLengthMetres}} metres
+      {% else %}
+        Less than 18.65 m
+      {% endif %}
+  {% endset %}
 
 {{ govukSummaryList({
   rows: [
@@ -37,14 +54,31 @@
         text: "Address"
       },
       value: {
-        text: application.address | dump
+        html: addressHtml
       },
       actions: {
         items: [
           {
             href: "#",
             text: "Change",
-            visuallyHiddenText: "date of birth"
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Vehicle length, including trailers"
+      },
+      value: {
+        html: vehicleLengthHtml
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
           }
         ]
       }
