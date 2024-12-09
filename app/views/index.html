@@ -4,12 +4,57 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl">
+  {{ serviceName }}
+</h1>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Filters</h2>
+
+      <form action="/" method="get">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            name: "filterStatus",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "Status",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            values: filterStatus,
+            items: [
+              {
+                value: "Approved",
+                text: "Lover"
+              },
+              {
+                value: "Rejected",
+                text: "Bad blood"
+              },
+              {
+                value: "Undecided",
+                text: "Speak now"
+              }
+            ]
+          }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Apply filters"
+        }) }}
+
+    </form>
+
+  </div>
+
+ <div class="govuk-grid-column-two-thirds">
+
     {{data.applications | log }}
     {% for application in data.applications %}
       {{card(application)}}
