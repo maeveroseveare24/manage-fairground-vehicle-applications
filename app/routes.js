@@ -18,3 +18,29 @@ router.get('/applications/:id', (req, res) => {
     })
 
 })
+
+router.post('/applications/:id/accept', (req, res) => {
+
+    const id = req.params.id
+    const applications = req.session.data.applications
+
+    const application = applications.find((application) => application.id === id)
+
+    application.status = "Approved"
+
+    res.redirect('/applications/' + id)
+
+})
+
+router.post('/applications/:id/reject', (req, res) => {
+
+    const id = req.params.id
+    const applications = req.session.data.applications
+
+    const application = applications.find((application) => application.id === id)
+
+    application.status = "Rejected"
+
+    res.redirect('/applications/' + id)
+
+})

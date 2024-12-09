@@ -76,7 +76,7 @@ module.exports = {
       "isVehicleMaxSpeed": false,
       "isTravelConvoy": false,
       "vehicleModified": false,
-      "status": "Approved",
+      "status": "Undecided",
 
     }
   ]
