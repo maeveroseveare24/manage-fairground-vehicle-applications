@@ -16,6 +16,27 @@
       Application for {{application.fullName}}
     </h1>
 
+    {% if application.status == "Approved" %}
+    {{ govukTag({
+        text: "Lover",
+        classes: "govuk-tag--green"
+    }) }}
+{% elseif application.status == "Rejected" %}
+
+        {{ govukTag({
+        text: "Bad blood",
+        classes: "govuk-tag--red"
+    }) }}
+
+{% elseif application.status == "Undecided" %}
+
+        {{ govukTag({
+        text: "Speak now",
+        classes: "govuk-tag--purple"
+    }) }}
+
+{% endif %}
+
   {% set addressHtml %}
     {{application.address.line1}} <br>
     {{application.address.town}} <br>

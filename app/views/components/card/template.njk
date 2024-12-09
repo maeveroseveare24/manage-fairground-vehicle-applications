@@ -1,9 +1,35 @@
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
 <div class="app-card">
+
+
     <h2 class="govuk-heading-m">
         <a href="/applications/{{ params.id }}">
             {{ params.fullName }}
         </a>
     </h2>
+
+        {% if params.status == "Approved" %}
+            {{ govukTag({
+                text: "Lover",
+                classes: "govuk-tag--green"
+            }) }}
+        {% elseif params.status == "Rejected" %}
+
+                {{ govukTag({
+                text: "Bad blood",
+                classes: "govuk-tag--red"
+            }) }}
+
+        {% elseif params.status == "Undecided" %}
+
+                {{ govukTag({
+                text: "Speak now",
+                classes: "govuk-tag--purple"
+            }) }}
+
+        {% endif %}
+
     <p>
        <b>
             Application reference:
