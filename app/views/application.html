@@ -19,23 +19,40 @@
     {% if application.status == "Approved" %}
       {{ govukTag({
         text: "Lover",
-        classes: "govuk-tag--green"
+        classes: "govuk-tag--green govuk-!-margin-bottom-3"
 			}) }}
     {% elseif application.status == "Rejected" %}
 
 			{{ govukTag({
 				text: "Bad blood",
-				classes: "govuk-tag--red"
+				classes: "govuk-tag--red govuk-!-margin-bottom-3"
 			}) }}
 
     {% elseif application.status == "Undecided" %}
 
 			{{ govukTag({
 				text: "Speak now",
-				classes: "govuk-tag--purple"
+				classes: "govuk-tag--purple govuk-!-margin-bottom-3"
 			}) }}
 
     {% endif %}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% if application.status == "Undecided" %}
+        <div class="govuk-button-group">
+          <form action="/applications/{{ application.id }}/accept" method="post">
+            {{ govukButton({
+              text: "Accept application"
+            }) }}
+          </form>
+          <form action="/applications/{{ application.id }}/reject" method="post">
+            {{ govukButton({
+              text: "Reject application",
+              classes: "govuk-button--secondary"
+            }) }}
+          </form>
+        </div>
+      {% endif %}
 
   {% set addressHtml %}
     {{application.address.line1}} <br>

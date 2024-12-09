@@ -59,8 +59,8 @@ module.exports = {
       "fullName": "Sabrina Carpenter",
       "address": {
           "line1": "Espresso Avenue",
-          "town": "West Hollywood",
-          "postcode": "CR26"
+          "town": "Please Please Please",
+          "postcode": "SC26"
       },
 
       "yearVehicleBuilt": 1998,
@@ -76,7 +76,7 @@ module.exports = {
       "isVehicleMaxSpeed": false,
       "isTravelConvoy": false,
       "vehicleModified": false,
-      "status": "Undecided",
+      "status": "Approved",
 
     }
   ]
