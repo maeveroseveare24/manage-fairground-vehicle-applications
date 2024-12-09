@@ -55,8 +55,8 @@
 
  <div class="govuk-grid-column-two-thirds">
 
-    {{data.applications | log }}
-    {% for application in data.applications %}
+    {{ applications | log }}
+    {% for application in applications %}
       {{card(application)}}
     {% endfor %}
   </div>

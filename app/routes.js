@@ -6,6 +6,15 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+router.get('/', (req, res) => {
+
+    const applications = req.session.data.applications
+
+    res.render('index.html', {
+        applications
+    })
+})
+
 router.get('/applications/:id', (req, res) => {
 
     const id = req.params.id
